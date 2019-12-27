@@ -1,0 +1,135 @@
+package com.live.pageObjects;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.live.util.WebdriverUtils;
+
+public class TripAdvisorHomePage {
+
+	public WebDriver driver;
+	public TripAdvisorHomePage(WebDriver driver) {
+	this.driver=driver;
+	PageFactory.initElements(driver, this);
+	}
+	
+	@FindBy(xpath="//div[@title='Search']") private WebElement homesearchBox;
+	@FindBy(xpath="//input[@type='search']") private WebElement searchBox;
+	@FindBy(xpath="//button[@type='submit']") private WebElement searchButton;
+	@FindBy(xpath ="/span[contains(text(),'More results matching')]/../../../../../div/../div[2]/div/div/div") private WebElement firstItem;
+	@FindBy(linkText = "Write a review") private WebElement writeReviewButton;
+	@FindBy(xpath = "//span[@id='bubble_rating']") private WebElement bubbleRating;
+	@FindBy(id = "ReviewTitle") private WebElement reviewtitle;
+	@FindBy(id = "ReviewText") private WebElement reviewtext;
+	@FindBy(xpath = "//div[contains(@class,'Business')]") private WebElement sortOfTripBusiness;
+	@FindBy(id = "trip_date_month_year") private WebElement travelSelect;
+	@FindBy(xpath = "//div[text()='Service']/../div/div/span[contains(@class,'bubble_00')]") private WebElement serviceStar;
+	@FindBy(xpath = "//div[text()='Sleep Quality']/../div/div/span[contains(@class,'bubble_00')]") private WebElement sleepQualityStar;
+	@FindBy(xpath = "//div[text()='Value']/../div/div/span[contains(@class,'bubble_00')]") private WebElement valueStar;
+	@FindBy(id = "noFraud")private WebElement checkBox;
+	@FindBy(id = "SUBMIT")private WebElement submitButton;
+
+	public void clickHomeSearch()
+	{
+		WebdriverUtils.waitForElementPresenet(driver, homesearchBox);
+		System.out.println(homesearchBox.getLocation().getX());
+		System.out.println(homesearchBox.getLocation().getY());
+		System.out.println(homesearchBox.getSize().getWidth());
+		homesearchBox.click();
+	}
+	
+	public void performSearch(String searchText)
+	{
+		searchBox.click();
+		searchBox.sendKeys(searchText);
+	}
+	
+	public void clickSearch()
+	{
+		searchButton.click();
+	}
+	
+	public void selectFirstItem()
+	{
+		WebdriverUtils.waitForElementPresenet(driver, firstItem);
+		firstItem.click();
+	}
+	
+	public void selectHotelIndexWise(int index)
+	{
+		List<WebElement> li = driver.findElements(By.xpath("//span[contains(text(),'More results matching')]/../../../../../div[2]/div/div/div"));
+			if(li.size()>0)
+			{
+				li.get(index).click();
+			}
+	}
+	
+	public void clickSubmit()
+	{
+		submitButton.click();
+	}
+	
+	public void clickCheckbox()
+	{
+		checkBox.click();
+	}
+	
+	public void enterReviewTitle(String reviewTitleText ) {
+		reviewtitle.sendKeys(reviewTitleText);
+	}
+	
+	public void enterReviewText(String reviewText)
+	{
+		reviewtext.sendKeys(reviewText);
+	}
+	
+	public void clickWriteReview()
+	{
+		WebdriverUtils.waitForElementPresenet(driver, writeReviewButton);
+		WebdriverUtils.scrollToElement(driver, writeReviewButton);
+		writeReviewButton.click();
+	}
+	
+	public void selectFiveStarOverAllRating()
+	{
+		//WebdriverUtils.selectRating(driver, bubbleRating, 1);
+		Actions a = new Actions(driver);
+		int bubbleRatingX= bubbleRating.getLocation().getX();			
+		int bubbleRatingY= bubbleRating.getLocation().getY();			
+		int bubbleWidth = bubbleRating.getSize().getWidth();	
+		int endX =(bubbleRatingX * (1));
+		a.moveToElement(bubbleRating).moveByOffset(bubbleRatingX, bubbleRatingY).pause(2000).moveByOffset(endX, bubbleRatingY).click().build().perform();
+
+	}
+	
+	public void selectFiveStarServiceRating()
+	{
+		WebdriverUtils.selectRating(driver, serviceStar, 1);
+	}
+	
+	public void selectFiveStarSleepRating()
+	{
+		WebdriverUtils.selectRating(driver, sleepQualityStar, 1);
+	}
+	
+	public void selectFiveStarValueRating()
+	{
+		WebdriverUtils.selectRating(driver, valueStar, 1);
+	}
+	
+	public void  selectSortOfTripBusiness()
+	{
+		sortOfTripBusiness.click();
+	}
+	
+	public void travelSelect(String dropdownValue)
+	{
+		WebdriverUtils.selectDropdown(driver, travelSelect, dropdownValue);
+	}
+}

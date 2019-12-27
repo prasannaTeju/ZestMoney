@@ -1,0 +1,41 @@
+package com.live.pageTests;
+
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.live.base.BaseClass;
+import com.live.base.Pagefactory;
+import com.live.util.AppDataProvider;
+
+public class PriceCompareTest extends BaseClass {
+
+	
+	public Pagefactory page;
+	@BeforeMethod
+	public void init() {
+		setBrowser();
+		driver.get(appData.getProperty("amazonUrl"));
+	}
+
+	@Test
+	public void comparePrice(){
+		page =pageBase();
+		page.amazonHomePage(driver).performSearch("iPhone XR (64GB)");
+		page.amazonHomePage(driver).clickSearch();
+		String amazonPrice=page.amazonSearchPage(driver).getMobilePrice();
+		System.out.println(amazonPrice);
+		driver.navigate().to(appData.getProperty("flikartUrl"));
+		page.flipkartHomePage(driver).performSearch("iPhone XR (64GB)");
+		page.flipkartHomePage(driver).clickSearch();
+		String flipkartPrice = page.flipkartSearchPage(driver).getMobilePrice();
+		System.out.println(flipkartPrice);
+		
+	}
+
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
+	}
+}

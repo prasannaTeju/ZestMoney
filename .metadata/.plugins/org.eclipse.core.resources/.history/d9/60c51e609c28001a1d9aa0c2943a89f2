@@ -1,0 +1,79 @@
+package com.live.pageObjects;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.live.util.WebdriverUtils;
+
+public class TripAdvisorHomePage {
+
+	public WebDriver driver;
+	public TripAdvisorHomePage(WebDriver driver) {
+	this.driver=driver;
+	PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(xpath="//input[@type='search']") private WebElement searchBox;
+	@FindBy(xpath="//button[@type='submit']") private WebElement searchButton;
+	@FindBy(xpath ="/span[contains(text(),'More results matching')]/../../../../../div/../div[2]/div/div/div") private WebElement firstItem;
+	@FindBy(xpath = "//span[@id='bubble_rating']") private WebElement bubbleRating;
+	@FindBy(id = "ReviewTitle") private WebElement reviewTitle;
+	@FindBy(id = "ReviewText") private WebElement reviewText;
+	@FindBy(xpath = "//div[contains(@class,'Business')]") private WebElement sortOfTripBusiness;
+	@FindBy(id = "trip_date_month_year") private WebElement travelSelect;
+	@FindBy(xpath = "//div[text()='Service']/../div/div/span[contains(@class,'bubble_00')]") private WebElement serviceStar;
+	@FindBy(xpath = "//div[text()='Sleep Quality']/../div/div/span[contains(@class,'bubble_00')]") private WebElement sleepQualityStar;
+	@FindBy(xpath = "//div[text()='Value']/../div/div/span[contains(@class,'bubble_00')]") private WebElement valueStar;
+	@FindBy(id = "noFraud")private WebElement checkBox;
+	@FindBy(id = "SUBMIT")private WebElement submitButton;
+
+	public void performSearch(String searchText)
+	{
+		searchBox.click();
+		searchBox.sendKeys(searchText);
+	}
+	
+	public void clickSearch()
+	{
+		searchButton.click();
+	}
+	
+	public void selectFirstItem()
+	{
+		firstItem.click();
+	}
+	
+	public void selectHotelIndexWise(int index)
+	{
+		List<WebElement> li = driver.findElements(By.xpath("//span[contains(text(),'More results matching')]/../../../../../div[2]/div/div/div"));
+			if(li.size()>0)
+			{
+				WebdriverUtils.scrollToElement(driver, li.get(index));
+				li.get(index).click();
+			}
+	}
+	
+	public void clickSubmit()
+	{
+		submitButton.click();
+	}
+	
+	public void clickCheckbox()
+	{
+		checkBox.click();
+	}
+	
+	public void enterReviewTitle(String reviewTitle ) {
+		reviewTitle.send
+	}
+	
+	public void enterReviewText(String reviewText)
+	{
+		
+	}
+}

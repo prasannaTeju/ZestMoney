@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="58151" started-at="2019-12-28T01:05:30 IST" finished-at="2019-12-28T01:06:28 IST">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="58151" started-at="2019-12-28T01:05:30 IST" finished-at="2019-12-28T01:06:28 IST">
+      <class name="com.live.pageTests.PriceCompareTest">
+        <test-method status="PASS" signature="initalize()[pri:0, instance:com.live.pageTests.PriceCompareTest@1f36e637]" name="initalize" is-config="true" duration-ms="17" started-at="2019-12-28T01:05:30 IST" finished-at="2019-12-28T01:05:30 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initalize -->
+        <test-method status="PASS" signature="init()[pri:0, instance:com.live.pageTests.PriceCompareTest@1f36e637]" name="init" is-config="true" duration-ms="11930" started-at="2019-12-28T01:05:30 IST" finished-at="2019-12-28T01:05:42 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="comparePrice()[pri:0, instance:com.live.pageTests.PriceCompareTest@1f36e637]" name="comparePrice" duration-ms="20943" started-at="2019-12-28T01:05:42 IST" finished-at="2019-12-28T01:06:03 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- comparePrice -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.live.pageTests.PriceCompareTest@1f36e637]" name="tearDown" is-config="true" duration-ms="1678" started-at="2019-12-28T01:06:03 IST" finished-at="2019-12-28T01:06:05 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.live.pageTests.PriceCompareTest -->
+      <class name="com.live.pageTests.TripAdvisorTest">
+        <test-method status="PASS" signature="initalize()[pri:0, instance:com.live.pageTests.TripAdvisorTest@2758fe70]" name="initalize" is-config="true" duration-ms="16" started-at="2019-12-28T01:05:30 IST" finished-at="2019-12-28T01:05:30 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initalize -->
+        <test-method status="PASS" signature="init()[pri:0, instance:com.live.pageTests.TripAdvisorTest@2758fe70]" name="init" is-config="true" duration-ms="31976" started-at="2019-12-28T01:05:30 IST" finished-at="2019-12-28T01:06:02 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="reviewWritingTripAdvisor()[pri:0, instance:com.live.pageTests.TripAdvisorTest@2758fe70]" name="reviewWritingTripAdvisor" duration-ms="25120" started-at="2019-12-28T01:06:02 IST" finished-at="2019-12-28T01:06:27 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reviewWritingTripAdvisor -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.live.pageTests.TripAdvisorTest@2758fe70]" name="tearDown" is-config="true" duration-ms="992" started-at="2019-12-28T01:06:27 IST" finished-at="2019-12-28T01:06:28 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.live.pageTests.TripAdvisorTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

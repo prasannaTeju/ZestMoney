@@ -1,0 +1,5 @@
+package com.live.pageObjects;
+
+public class TripAdvisorPage {
+
+}
