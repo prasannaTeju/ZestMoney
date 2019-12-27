@@ -40,6 +40,10 @@ public class BaseClass extends WebdriverUtils{
 		appData = new Properties();
 		appData.load(fip);
 		
+		fip = new FileInputStream(System.getProperty("user.dir")+ "//src//test//resources//appElements.properties");
+		appElements = new Properties();
+		appElements.load(fip);
+		
 		} 
 	
    	

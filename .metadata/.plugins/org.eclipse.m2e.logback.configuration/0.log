@@ -579,3 +579,7 @@
 2019-12-28 01:15:38,631 [Worker-81: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\GANESHA\Desktop\Assignment\assignment\src\main\resources
 2019-12-28 01:15:38,632 [Worker-81: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-12-28 01:15:38,633 [Worker-81: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-28 01:56:32,552 [Worker-83: Launching TripAdvisorTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-28 01:56:32,553 [Worker-83: Launching TripAdvisorTest] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\GANESHA\Desktop\Assignment\assignment\src\main\resources
+2019-12-28 01:56:32,555 [Worker-83: Launching TripAdvisorTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-28 01:56:32,556 [Worker-83: Launching TripAdvisorTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
